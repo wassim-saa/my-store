@@ -1,29 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Car Rental - Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Car Rental - Wasim</title>
 <style>
-body { font-family: sans-serif; text-align: center; background: #f4f4f4; }
-.car-box { background: white; border: 1px solid #ddd; margin: 10px auto; padding: 15px; width: 250px; border-radius: 5px; }
-button { background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; }
-.cite { color: gray; font-size: 11px; margin-top: 50px; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f0f0f; color: white; text-align: center; margin: 0; padding: 20px; }
+.container { max-width: 900px; margin: auto; background: #1a1a1a; padding: 40px; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+#login-section { display: block; }
+.welcome-title { font-size: 2.5em; color: #f1c40f; margin-bottom: 10px; }
+input { width: 80%; padding: 15px; margin: 15px 0; border-radius: 10px; border: none; font-size: 1.1em; }
+button.main-btn { background-color: #f1c40f; color: black; border: none; padding: 15px 40px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.2em; }
+#fleet-section { display: none; }
+.car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+.car-card { background: #252525; border-radius: 15px; overflow: hidden; transition: 0.3s; border: 1px solid #333; }
+.car-card:hover { transform: scale(1.05); border-color: #f1c40f; }
+.car-card img { width: 100%; height: 180px; object-fit: cover; }
+.car-info { padding: 15px; }
+.price { color: #2ecc71; font-size: 1.3em; font-weight: bold; }
+.cite { color: #555; font-size: 11px; margin-top: 50px; }
 </style>
 </head>
 <body>
-<h1>Car Rental Service</h1>
-
-<div class="car-box">
-<h3>Renault Clio 4</h3>
-<p>6000 DZD / Day</p>
-<button onclick="alert('Booked!')">Rent Now</button>
+<div class="container">
+<div id="login-section">
+<h1 class="welcome-title">Welcome to Luxury Rentals</h1>
+<p>Your journey to elegance starts here.</p>
+<input type="email" id="userEmail" placeholder="Enter your Email to enter">
+<br>
+<button class="main-btn" onclick="enterSite()">Enter Website</button>
 </div>
-
-<div class="car-box">
-<h3>Hyundai Tucson</h3>
-<p>10000 DZD / Day</p>
-<button onclick="alert('Booked!')">Rent Now</button>
+<div id="fleet-section">
+<h1>Select Your Supercar</h1>
+<div class="car-grid">
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500" alt="Porsche 911">
+<div class="car-info">
+<h3>Porsche 911 Turbo</h3>
+<p class="price">45,000 DZD / Day</p>
+<button onclick="book('Porsche')">Book Now</button>
 </div>
-
+</div>
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500" alt="BMW 5">
+<div class="car-info">
+<h3>BMW 5 Series</h3>
+<p class="price">25,000 DZD / Day</p>
+<button onclick="book('BMW 5')">Book Now</button>
+</div>
+</div>
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500" alt="Ford F-150">
+<div class="car-info">
+<h3>Ford F-150 Raptor</h3>
+<p class="price">30,000 DZD / Day</p>
+<button onclick="book('Ford Raptor')">Book Now</button>
+</div>
+</div>
+<div class="car-card">
+<img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=500" alt="Ford Mustang">
+<div class="car-info">
+<h3>Ford Mustang GT</h3>
+<p class="price">28,000 DZD / Day</p>
+<button onclick="book('Mustang')">Book Now</button>
+</div>
+</div>
+</div>
+</div>
 <p class="cite">Source: ‘Introduction to Computer Systems’. Techopedia, 2026.</p>
+</div>
+<script>
+function enterSite() {
+const email = document.getElementById('userEmail').value;
+if(email.includes('@')) {
+document.getElementById('login-section').style.display = 'none';
+document.getElementById('fleet-section').style.display = 'block';
+} else {
+alert("Please enter a valid email address!");
+}
+}
+function book(car) {
+alert("Success! You have selected the " + car + ". We will send details to your email.");
+}
+</script>
 </body>
 </html>
