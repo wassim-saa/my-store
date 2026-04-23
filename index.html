@@ -3,85 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Car Rental - Wasim</title>
+<title>Wassim Luxury Rental & Delivery</title>
 <style>
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f0f0f; color: white; text-align: center; margin: 0; padding: 20px; }
-.container { max-width: 900px; margin: auto; background: #1a1a1a; padding: 40px; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-#login-section { display: block; }
-.welcome-title { font-size: 2.5em; color: #f1c40f; margin-bottom: 10px; }
-input { width: 80%; padding: 15px; margin: 15px 0; border-radius: 10px; border: none; font-size: 1.1em; }
-button.main-btn { background-color: #f1c40f; color: black; border: none; padding: 15px 40px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.2em; }
-#fleet-section { display: none; }
-.car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-.car-card { background: #252525; border-radius: 15px; overflow: hidden; transition: 0.3s; border: 1px solid #333; }
-.car-card:hover { transform: scale(1.05); border-color: #f1c40f; }
-.car-card img { width: 100%; height: 180px; object-fit: cover; }
-.car-info { padding: 15px; }
-.price { color: #2ecc71; font-size: 1.3em; font-weight: bold; }
-.cite { color: #555; font-size: 11px; margin-top: 50px; }
+:root { --gold: #f1c40f; --dark: #0f0f0f; --card: #1a1a1a; }
+body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark); color: white; margin: 0; text-align: center; }
+.container { max-width: 1100px; margin: auto; padding: 20px; }
+.step { display: none; padding: 40px 20px; animation: fadeIn 0.5s; }
+.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+.welcome-box { background: var(--card); padding: 50px; border-radius: 20px; border: 1px solid #333; margin-top: 50px; }
+input, textarea { width: 80%; padding: 15px; margin: 10px 0; border-radius: 10px; border: 1px solid #444; background: #222; color: white; font-size: 1em; }
+.car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+.car-card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid #333; transition: 0.3s; text-align: left; }
+.car-card:hover { border-color: var(--gold); transform: translateY(-10px); }
+.car-card img { width: 100%; height: 200px; object-fit: cover; }
+.car-details { padding: 20px; }
+.specs-list { font-size: 0.9em; color: #aaa; margin: 10px 0; list-style: none; padding: 0; }
+.specs-list li { margin-bottom: 5px; }
+.price { color: #2ecc71; font-size: 1.4em; font-weight: bold; margin: 15px 0; }
+.btn { background: var(--gold); color: black; border: none; padding: 15px 40px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: 0.3s; }
+.btn:hover { background: #d4ac0d; box-shadow: 0 0 15px rgba(241, 196, 15, 0.4); }
+.btn-secondary { background: #444; color: white; margin-top: 20px; }
+
+.cite { color: #444; font-size: 10px; margin-top: 100px; }
 </style>
 </head>
 <body>
+
 <div class="container">
-<div id="login-section">
-<h1 class="welcome-title">Welcome to Luxury Rentals</h1>
-<p>Your journey to elegance starts here.</p>
-<input type="email" id="userEmail" placeholder="Enter your Email to enter">
-<br>
-<button class="main-btn" onclick="enterSite()">Enter Website</button>
+
+<div id="step1" class="step active">
+<div class="welcome-box">
+<h1 style="color: var(--gold); font-size: 3em;">WASSIM LUXURY</h1>
+<p>Experience the ultimate driving prestige.</p>
+<p>Please enter your email to view our exclusive fleet:</p>
+<input type="email" id="emailInput" placeholder="example@gmail.com">
+<br><br>
+<button class="btn" onclick="showFleet()">Browse Supercars</button>
 </div>
-<div id="fleet-section">
-<h1>Select Your Supercar</h1>
+</div>
+
+<div id="step2" class="step">
+<h1 style="color: var(--gold);">Our Premium Fleet</h1>
+<p>Select a vehicle to proceed with your home delivery booking.</p>
+
 <div class="car-grid">
 <div class="car-card">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500" alt="Porsche 911">
-<div class="car-info">
-<h3>Porsche 911 Turbo</h3>
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500">
+<div class="car-details">
+<h3>Porsche 911 Turbo S</h3>
+<ul class="specs-list">
+<li>⚡ 640 Horsepower</li>
+<li>🚀 0-100 km/h: 2.7s</li>
+<li>🕹️ All-Wheel Drive</li>
+</ul>
 <p class="price">45,000 DZD / Day</p>
-<button onclick="book('Porsche')">Book Now</button>
+<button class="btn" style="width:100%" onclick="showOrder('Porsche 911 Turbo S')">Book Now</button>
 </div>
 </div>
+
 <div class="car-card">
-<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500" alt="BMW 5">
-<div class="car-info">
-<h3>BMW 5 Series</h3>
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500">
+<div class="car-details">
+<h3>BMW 5 Series M</h3>
+<ul class="specs-list">
+<li>⚡ 335 Horsepower</li>
+<li>🛡️ Executive Luxury</li>
+<li>🛣️ Perfect for Long Trips</li>
+</ul>
 <p class="price">25,000 DZD / Day</p>
-<button onclick="book('BMW 5')">Book Now</button>
+<button class="btn" style="width:100%" onclick="showOrder('BMW 5 Series M')">Book Now</button>
 </div>
 </div>
+
 <div class="car-card">
-<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500" alt="Ford F-150">
-<div class="car-info">
+<img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=500">
+<div class="car-details">
 <h3>Ford F-150 Raptor</h3>
+<ul class="specs-list">
+<li>⚡ 450 Horsepower</li>
+<li>⛰️ Off-road King</li>
+<li>📦 Massive Cargo Space</li>
+</ul>
 <p class="price">30,000 DZD / Day</p>
-<button onclick="book('Ford Raptor')">Book Now</button>
-</div>
-</div>
-<div class="car-card">
-<img src="https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=500" alt="Ford Mustang">
-<div class="car-info">
-<h3>Ford Mustang GT</h3>
-<p class="price">28,000 DZD / Day</p>
-<button onclick="book('Mustang')">Book Now</button>
+<button class="btn" style="width:100%" onclick="showOrder('Ford F-150 Raptor')">Book Now</button>
 </div>
 </div>
 </div>
+<button class="btn btn-secondary" onclick="goBack(1)">Back</button>
 </div>
+
+<div id="step3" class="step">
+<div class="welcome-box" style="text-align: left; max-width: 600px; margin: auto;">
+<h2 style="color: var(--gold);">Delivery Information</h2>
+<p id="carChoiceDisplay" style="font-weight: bold; color: #2ecc71;"></p>
+
+<form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+<input type="hidden" name="Selected_Car" id="hiddenCar">
+
+<label>Full Name:</label>
+<input type="text" name="Name" placeholder="Enter your full name" required>
+
+<label>Phone Number:</label>
+<input type="tel" name="Phone" placeholder="06XXXXXXXX" required>
+
+<label>Delivery Home Address:</label>
+<textarea name="Address" rows="3" placeholder="Enter your full street address for delivery" required></textarea>
+
+<label>Rental Duration (Days):</label>
+<input type="number" name="Duration" min="1" value="1">
+
+<button type="submit" class="btn" style="width:100%; margin-top: 20px;">Confirm & Send Order</button>
+</form>
+<button class="btn btn-secondary" onclick="goBack(2)">Change Car</button>
+</div>
+</div>
+
 <p class="cite">Source: ‘Introduction to Computer Systems’. Techopedia, 2026.</p>
 </div>
+
 <script>
-function enterSite() {
-const email = document.getElementById('userEmail').value;
-if(email.includes('@')) {
-document.getElementById('login-section').style.display = 'none';
-document.getElementById('fleet-section').style.display = 'block';
-} else {
-alert("Please enter a valid email address!");
+function showFleet() {
+if(document.getElementById('emailInput').value.includes('@')) {
+switchStep(1, 2);
+} else { alert("Please enter a valid email!"); }
 }
+
+function showOrder(car) {
+document.getElementById('carChoiceDisplay').innerText = "Selected Vehicle: " + car;
+document.getElementById('hiddenCar').value = car;
+switchStep(2, 3);
 }
-function book(car) {
-alert("Success! You have selected the " + car + ". We will send details to your email.");
+
+function switchStep(from, to) {
+document.getElementById('step' + from).classList.remove('active');
+document.getElementById('step' + to).classList.add('active');
+}
+
+function goBack(to) {
+document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+document.getElementById('step' + to).classList.add('active');
 }
 </script>
+
 </body>
 </html>
