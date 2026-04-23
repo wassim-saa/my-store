@@ -1,104 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>Luxury Car Fleet - Exterior & Interior</title>
+<title>Wassim Luxury Cars - 58 Wilayas</title>
 <style>
-:root { --gold: #f1c40f; --dark: #0b0b0b; }
-body { font-family: 'Segoe UI', sans-serif; background-color: var(--dark); color: white; margin: 0; }
+:root { --gold: #d4af37; --dark: #0a0a0a; --gray: #1a1a1a; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: var(--dark); color: white; margin: 0; }
 .container { max-width: 1200px; margin: auto; padding: 20px; }
-.car-card { background: #1a1a1a; border-radius: 20px; margin-bottom: 40px; overflow: hidden; border: 1px solid #333; }
-.image-gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; padding: 15px; }
-.main-img { width: 100%; height: 400px; object-fit: cover; border-radius: 10px; }
-.side-images { display: flex; flex-direction: column; gap: 10px; }
-.side-img { width: 100%; height: 195px; object-fit: cover; border-radius: 10px; transition: 0.3s; }
-.side-img:hover { transform: scale(1.02); filter: brightness(1.2); }
+.car-card { background: var(--gray); border-radius: 25px; margin-bottom: 50px; overflow: hidden; border: 1px solid #333; transition: 0.3s; }
+.car-card:hover { border-color: var(--gold); box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
 
-.info-bar { display: flex; justify-content: space-between; align-items: center; padding: 20px 30px; background: #222; }
-.specs-tags span { background: #333; padding: 5px 15px; border-radius: 20px; margin-right: 10px; font-size: 0.8em; color: var(--gold); }
-#order-section { background: var(--gold); color: black; padding: 40px; border-radius: 20px; display: none; margin-top: 20px; }
-input, textarea { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; }
-.btn-order { background: var(--gold); color: black; border: none; padding: 15px 40px; border-radius: 10px; font-weight: bold; cursor: pointer; font-size: 1.1em; }
+.gallery { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; padding: 20px; }
+.main-img { width: 100%; height: 450px; object-fit: cover; border-radius: 15px; }
+.side-imgs { display: flex; flex-direction: column; gap: 15px; }
+.side-img { width: 100%; height: 217px; object-fit: cover; border-radius: 15px; filter: brightness(0.8); }
+.side-img:hover { filter: brightness(1.2); }
+
+.car-info { padding: 30px; background: #222; display: flex; justify-content: space-between; align-items: center; }
+.details h2 { color: var(--gold); margin: 0; font-size: 2.2em; }
+.price { font-size: 1.8em; color: #2ecc71; font-weight: bold; }
+#order-form { display: none; background: var(--gold); color: black; padding: 40px; border-radius: 25px; margin-top: 30px; animation: slideIn 0.5s; }
+@keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.input-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+input, textarea, select { width: 100%; padding: 15px; border-radius: 10px; border: 1px solid #999; margin-top: 10px; font-size: 1em; }
+.btn-submit { background: black; color: white; padding: 20px; width: 100%; border-radius: 15px; border: none; font-size: 1.3em; cursor: pointer; margin-top: 25px; font-weight: bold; }
+
+.btn-book { background: var(--gold); color: black; padding: 15px 40px; border-radius: 12px; font-weight: bold; border: none; cursor: pointer; font-size: 1.1em; }
+.cite { color: #444; font-size: 10px; margin-top: 50px; text-align: center; }
 </style>
 </head>
 <body>
 
 <div class="container">
-<h1 style="text-align:center; color:var(--gold); font-size: 3em; margin: 40px 0;">Premium Selection</h1>
+<h1 style="text-align:center; color:var(--gold); font-size: 3.5em; margin: 40px 0;">WASSIM LUXURY RENTAL</h1>
+<p style="text-align:center; color:#bbb;">خدمة التوصيل متوفرة لـ 58 ولاية جزائرية</p>
 
 <div class="car-card">
-<div class="image-gallery">
-<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" class="main-img" alt="Exterior">
-<div class="side-images">
-<img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=400" class="side-img" alt="Interior">
-<img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400" class="side-img" alt="Details">
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" class="main-img" alt="بورش خارج">
+<div class="side-imgs">
+<img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?w=400" class="side-img" alt="بورش داخل">
+<img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400" class="side-img" alt="بورش محرك">
 </div>
 </div>
-<div class="info-bar">
-<div>
+<div class="car-info">
+<div class="details">
 <h2>Porsche 911 Turbo S</h2>
-<div class="specs-tags">
-<span>Exterior: Night Blue</span>
-<span>Interior: Leather Black</span>
-<span>640 HP</span>
+<p>🚀 640 HP | 💎 صالون فخم | 📍 متاح للتوصيل الفوري</p>
 </div>
-</div>
-<div style="text-align:right">
-<div style="font-size: 1.5em; font-weight: bold; color: #2ecc71;">45,000 DZD / Day</div>
-<button class="btn-order" onclick="openOrder('Porsche 911 Turbo S')">Book & Deliver</button>
+<div style="text-align:left">
+<div class="price">45,000 DZD / يوم</div>
+<button class="btn-book" onclick="openBooking('Porsche 911 Turbo S')">احجز الآن</button>
 </div>
 </div>
 </div>
 
 <div class="car-card">
-<div class="image-gallery">
-<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800" class="main-img" alt="Exterior">
-<div class="side-images">
-<img src="https://images.unsplash.com/photo-1617814071742-132049e3778a?w=400" class="side-img" alt="Interior">
-<img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400" class="side-img" alt="Wheel">
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800" class="main-img" alt="BMW خارج">
+<div class="side-imgs">
+<img src="https://images.unsplash.com/photo-1617814071742-132049e3778a?w=400" class="side-img" alt="BMW داخل">
+<img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=400" class="side-img" alt="BMW تفاصيل">
 </div>
 </div>
-<div class="info-bar">
-<div>
-<h2>BMW 5 Series M-Package</h2>
-<div class="specs-tags">
-<span>Interior: White Ambient</span>
-<span>Sunroof</span>
-<span>Executive Class</span>
+<div class="car-info">
+<div class="details">
+<h2>BMW 5 Series M-Sport</h2>
+<p>🌟 إضاءة ذكية | 🛋️ راحة قصوى | 🌍 خدمة 58 ولاية</p>
 </div>
-</div>
-<div style="text-align:right">
-<div style="font-size: 1.5em; font-weight: bold; color: #2ecc71;">25,000 DZD / Day</div>
-<button class="btn-order" onclick="openOrder('BMW 5 Series')">Book & Deliver</button>
+<div style="text-align:left">
+<div class="price">25,000 DZD / يوم</div>
+<button class="btn-book" onclick="openBooking('BMW 5 Series')">احجز الآن</button>
 </div>
 </div>
 </div>
 
-<div id="order-section">
-<h2 id="carTitle">Booking Details</h2>
+<div id="order-form">
+<h2 id="selectedCar" style="margin-top:0">تأكيد طلب الكراء</h2>
 <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-<input type="hidden" name="Car" id="carInput">
-<div style="display:grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<input type="hidden" name="Model" id="carInput">
+<div class="input-group">
 <div>
-<label>Full Name</label>
-<input type="text" name="Name" required placeholder="Wassim Saadi">
-<label>Phone Number</label>
+<label>الاسم الكامل:</label>
+<input type="text" name="Full_Name" required placeholder="مثال: وسيم سعادي">
+
+<label>رقم الهاتف:</label>
 <input type="tel" name="Phone" required placeholder="06XXXXXXXX">
+
+<label>الولاية:</label>
+<select name="Wilaya" required>
+<option value="">اختر ولايتك...</option>
+<option value="01 Adrar">01 أدرار</option><option value="02 Chlef">02 الشلف</option>
+<option value="06 Bejaia">06 بجاية</option><option value="16 Algiers">16 الجزائر</option>
+<option value="19 Setif">19 سطيف</option><option value="31 Oran">31 وهران</option>
+<option value="58 Beni Abbes">58 بني عباس</option>
+</select>
 </div>
 <div>
-<label>Home Delivery Address (عين ولمان / سطيف)</label>
-<textarea name="Address" rows="4" required placeholder="Enter exact street and house number"></textarea>
+<label>عنوان المنزل بالتفصيل (للتوصيل):</label>
+<textarea name="Address" rows="7" required placeholder="اكتب اسم البلدية، الحي، ورقم المنزل لضمان وصول السيارة إليك"></textarea>
 </div>
 </div>
-<button type="submit" style="background:black; color:white; width:100%; padding:20px; font-size:1.2em; border-radius:10px; cursor:pointer;">Confirm Order Now</button>
+<button type="submit" class="btn-submit">إرسال الطلب للسائق</button>
 </form>
 </div>
+
+<p class="cite">Source: ‘Introduction to Computer Systems’. Techopedia, 2026.</p>
 </div>
 
 <script>
-function openOrder(carName) {
-document.getElementById('order-section').style.display = 'block';
-document.getElementById('carTitle').innerText = "Booking: " + carName;
+function openBooking(carName) {
+document.getElementById('order-form').style.display = 'block';
+document.getElementById('selectedCar').innerText = "حجز سيارة: " + carName;
 document.getElementById('carInput').value = carName;
 window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
